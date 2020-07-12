@@ -1,0 +1,42 @@
+*{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+canvas{
+    position: absolute;
+    left: 47%;
+    right: 50%;
+    background-color: black;
+    margin-top: 25px;
+    margin-left: -250px;
+    margin-bottom: 25px;
+    border: 3px solid rgb(75, 6, 235);
+    border-radius: 10px;
+}
+
+h3 {
+    
+    
+    
+   
+    background-color: black;
+    color: rgb(75, 6, 235);
+    background-color: black;
+    float: right;
+    border: 3px solid rgb(75, 6, 235);
+    border-radius: 10px;
+    text-align: center;
+    
+    margin: 15px;
+    position: absolute;
+    left: 40%;
+    right: 40%;
+    
+    bottom: 15%;
+}
+esquerda{
+    color: red;
+}
