@@ -4,7 +4,7 @@ var ctx = canvas.getContext("2d");
 
 var teclas = {};
 
-//"Bolinha"
+//"Bola"
 var bola = {
 	x: canvas.width / 2 - 15,
 	y: canvas.height / 2 - 15,
@@ -16,7 +16,7 @@ var bola = {
 	speed:1
 };
 
-// Barra da Esqueda
+// Barra Esqueda
 var esquerda = {
 	x: 10,
 	y: canvas.height / 2 - 60,
@@ -26,7 +26,7 @@ var esquerda = {
 	speed:3
 	
 };
-// Barra da Direita
+// Barra Direita
 var direita = {
 	x: canvas.width -20,
 	y: canvas.height / 2 - 60,
@@ -35,7 +35,7 @@ var direita = {
 	score:0,
 	speed:3
 };
-//Registrando o aperto das teclas
+//funcionalidade das teclas
 document.addEventListener("keydown", function (e) {
 	teclas[e.keyCode] = true;
 	if(e.keyCode == 80){
@@ -44,25 +44,25 @@ document.addEventListener("keydown", function (e) {
 	}
 	//alert(e.keyCode)
 }, false);
-//Registrando o aperto das teclas
+//funcionalidade das teclas
 document.addEventListener("keyup", function(e) {
 	delete teclas[e.keyCode];
 }, false);
-// Mover as barras
+// Mexer as barras
 function moveblock() {
-	//Player 1
+	//Player um
 	if(87 in teclas && esquerda.y > 0)
 			esquerda.y -= esquerda.speed;
 
 	else if(83 in teclas && esquerda.y + esquerda.altura < canvas.height)
 			esquerda.y += esquerda.speed;
-	//Final player 1 & inicio Player 2
+	//Final player um e inicio Player dois
 	if(38 in teclas && direita.y > 0)
 			direita.y -= direita.speed;
 
 	else if(40 in teclas && direita.y + direita.altura < canvas.height)
 			direita.y += direita.speed;
-	//Final player 2
+	//Final player dois
 };
 // Movimento da bola
 function moveBola () {
@@ -91,7 +91,7 @@ function moveBola () {
 		newGame("player 2");
 	};
 };
-// Pontuação
+// score
 function newGame(winner) {
 	
 	if (winner == "player 1")
@@ -115,7 +115,7 @@ function newGame(winner) {
 
 };
 
-// Imprimir tudo na tela
+// Imprimir na tela
 function desenha() {
 
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -133,5 +133,5 @@ function desenha() {
 	ctx.fillText(direita.score, canvas.width - 450, 100);
 
 }
-// Realiza as mudancas
+// Fazer mudanças
 setInterval(desenha, 2)
